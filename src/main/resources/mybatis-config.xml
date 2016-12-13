@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE configuration
+  PUBLIC '-//mybatis.org//DTD Config 3.0//EN'
+  'http://mybatis.org/dtd/mybatis-3-config.dtd'>
+<configuration>
+ <properties resource='jdbc.properties'/>
+ <typeAliases>
+  <typeAlias type='com.ggk.mybatis.domain.User' alias='User'></typeAlias>
+ </typeAliases>
+ <environments default='development'>
+  <environment id='development'>
+    <transactionManager type='JDBC'/>
+    <dataSource type='POOLED'>    
+   <property name='driver' value='${datasource.mybatis.jdbc.driver.class}'/>
+   <property name='url' value='${datasource.mybatis.jdbc.url}'/>
+   <property name='username' value='${datasource.mybatis.jdbc.username}'/>
+   <property name='password' value='${datasource.mybatis.jdbc.password}'/>
+    </dataSource>
+  </environment>
+  </environments>
+  <mappers>
+ <mapper resource='userMapper.xml'/>  <!-- com/sivalabs/mybatisdemo/mappers/ -->
+  </mappers>
+</configuration>
